@@ -5,12 +5,14 @@ import Eventos from '../components/eventos'
 import Galeria from '../components/galeria'
 import QuemSomos from '../components/quemsomos'
 import Contato from '../components/contato'
+import HeroImg from '../assets/img/heroimg3.png'
 
 export default function InicioPage() {
   return (
     <div className="min-h-screen flex flex-col bg-light relative box-border flex-auto grain">
       <section className="relative min-h-screen flex items-center w-full overflow-hidden pt-[88px] max-md:pt-[60px] max-sm:pt-[52px]">
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/32892658/pexels-photo-32892658.jpeg')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-cover bg-center"
+  style={{ backgroundImage: `url(${HeroImg})` }} />
         <div className="absolute inset-0 bg-gradient-to-r from-[#203246]/85 via-[#203246]/70 to-[#203246]/40" />
         <div className="hero-light-leak" />
         <div className="relative max-w-[1320px] mx-auto px-4 xl:max-w-[1200px] 2xl:max-w-[1400px] z-10">
