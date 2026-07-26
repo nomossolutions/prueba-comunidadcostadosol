@@ -56,7 +56,7 @@ export default function Header() {
           <div className="flex items-center gap-2 md:order-2">
             <a
               href="#contato"
-              className="rounded-full px-4 py-2 font-medium text-sm whitespace-nowrap transition-all duration-300 inline-flex items-center bg-accent text-primary hover:bg-[#c9b692]"
+              className="hidden md:inline-flex rounded-full px-4 py-2 font-medium text-sm whitespace-nowrap transition-all duration-300 items-center bg-accent text-primary hover:bg-[#c9b692]"
               onClick={closeMenu}
             >
               <BiMapPin className="mr-1.5" /> Visite-nos
@@ -116,6 +116,15 @@ export default function Header() {
                   </li>
                 );
               })}
+              <li className="md:hidden mt-2">
+                <a
+                  href="#contato"
+                  className="rounded-full px-4 py-2 font-medium text-sm whitespace-nowrap transition-all duration-300 inline-flex items-center bg-accent text-primary hover:bg-[#c9b692]"
+                  onClick={closeMenu}
+                >
+                  <BiMapPin className="mr-1.5" /> Visite-nos
+                </a>
+              </li>
             </ul>
           </div>
         </div>

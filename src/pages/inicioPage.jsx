@@ -41,22 +41,22 @@ export default function InicioPage() {
         </div>
       </section>
 
-      <section id='reunioes' className="border-t border-[rgba(0,0,0,0.04)] scroll-reveal">
+      <section id='reunioes' className="border-t border-[rgba(216,198,165,0.35)] scroll-reveal">
         <Reunioes />
       </section>
-      <section id='ministerios' className="bg-white border-t border-[rgba(0,0,0,0.04)] scroll-reveal">
+      <section id='ministerios' className="bg-white border-t border-[rgba(216,198,165,0.35)] scroll-reveal">
         <Ministerios />
       </section>
-      <section id='eventos' className="border-t border-[rgba(0,0,0,0.04)] scroll-reveal">
+      <section id='eventos' className="border-t border-[rgba(216,198,165,0.35)] scroll-reveal">
         <Eventos />
       </section>
-      <section id='galeria' className="bg-white border-t border-[rgba(0,0,0,0.04)] scroll-reveal">
+      <section id='galeria' className="bg-white border-t border-[rgba(216,198,165,0.35)] scroll-reveal">
         <Galeria />
       </section>
-      <section id='quemsomos' className="bg-white border-t border-[rgba(0,0,0,0.04)] scroll-reveal">
+      <section id='quemsomos' className="bg-white border-t border-[rgba(216,198,165,0.35)] scroll-reveal">
         <QuemSomos />
       </section>
-      <section id='contato' className="border-t border-[rgba(0,0,0,0.04)] scroll-reveal">
+      <section id='contato' className="border-t border-[rgba(216,198,165,0.35)] scroll-reveal">
         <Contato />
       </section>
 

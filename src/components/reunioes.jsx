@@ -56,13 +56,47 @@ export default function Reunioes() {
       </section>
 
       <section className="w-full px-[5%] pb-24 max-md:px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1100px] mx-auto scroll-reveal scroll-reveal-stagger">
-          {reunioes.map((r, i) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center max-w-[1100px] mx-auto scroll-reveal scroll-reveal-stagger">
+          {reunioes.slice(0, 3).map((r, i) => {
             const Icon = r.icon;
             return (
               <div
                 key={i}
-                className="scroll-reveal-child bg-white rounded-xl p-8 text-dark flex flex-col items-center text-center min-w-0 relative overflow-hidden transition-all duration-400 group hover:-translate-y-1"
+                className="scroll-reveal-child bg-white rounded-xl p-8 text-dark flex flex-col items-center text-center w-full relative overflow-hidden transition-all duration-400 group hover:-translate-y-1"
+                style={{
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
+                  borderLeft: `4px solid ${r.accent}`,
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = `0 8px 30px ${r.accent}18, 0 2px 8px rgba(0,0,0,0.06)`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)';
+                }}
+              >
+                <span
+                  className="absolute top-3 right-3 text-[0.65rem] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full"
+                  style={{ backgroundColor: `${r.accent}18`, color: r.accent }}
+                >
+                  {r.dia}
+                </span>
+                <Icon className="text-3xl mb-3 block transition-transform duration-300 group-hover:scale-110" style={{ color: r.accent }} />
+                <h2 className="font-serif text-[1.3rem] font-normal mb-3 text-primary max-md:text-[1.15rem]">{r.titulo}</h2>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-lg font-semibold" style={{ color: r.accent }}>{r.hora}</span>
+                </div>
+                <p className="text-[0.95rem] text-dark/60 leading-relaxed max-md:text-sm">{r.desc}</p>
+              </div>
+            );
+          })}
+        </div>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6 mt-6">
+          {reunioes.slice(3).map((r, i) => {
+            const Icon = r.icon;
+            return (
+              <div
+                key={i}
+                className="scroll-reveal-child bg-white rounded-xl p-8 text-dark flex flex-col items-center text-center w-full max-w-[350px] relative overflow-hidden transition-all duration-400 group hover:-translate-y-1"
                 style={{
                   boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
                   borderLeft: `4px solid ${r.accent}`,

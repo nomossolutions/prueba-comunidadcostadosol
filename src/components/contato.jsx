@@ -12,7 +12,7 @@ export default function Contato() {
         </p>
       </section>
 
-      <section className="w-full flex justify-center flex-wrap gap-8 px-[5%] bg-light max-md:px-4 max-md:gap-6 scroll-reveal">
+      <section className="w-full flex justify-center flex-wrap gap-8 px-[5%] bg-light max-md:px-4 max-md:gap-6 pb-24 scroll-reveal">
         <div className="w-full max-w-full flex flex-row items-stretch gap-8 bg-transparent max-md:flex-col">
           <div className="flex-1 bg-white p-8 rounded-xl shadow-sm max-md:p-6 max-sm:p-4">
             <h3 className="text-lg font-normal text-primary mb-6">

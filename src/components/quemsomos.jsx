@@ -9,7 +9,7 @@ export default function QuemSomos() {
         </h1>
       </section>
 
-      <section className="w-full px-[5%] bg-light max-md:px-4 pb-12 scroll-reveal">
+      <section className="w-full px-[5%] bg-light max-md:px-4 pb-24 scroll-reveal">
         <div className="max-w-[900px] mx-auto animate-fade-in-up">
           <div className="w-full h-[400px] bg-[url('./assets/img/imgHorizontal.jpg')] bg-cover bg-center rounded-2xl mb-10 max-md:h-[220px] max-sm:h-[180px] shadow-[0_8px_30px_rgba(0,0,0,0.08)]" />
           <div className="flex items-center gap-4 mb-6">
