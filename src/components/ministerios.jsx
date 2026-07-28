@@ -85,7 +85,7 @@ export default function Ministerios() {
             <Card key={i} m={m} />
           ))}
         </div>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-8 max-md:mt-6">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 mt-8 max-md:mt-6 scroll-reveal scroll-reveal-stagger">
           {fila2.map((m, i) => (
             <Card key={i} m={m} />
           ))}

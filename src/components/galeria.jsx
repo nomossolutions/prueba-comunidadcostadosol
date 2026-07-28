@@ -57,12 +57,19 @@ export default function Galeria() {
             <button
               key={foto.id}
               onClick={() => openLightbox(i)}
-              className={`scroll-reveal-child group relative overflow-hidden rounded-xl cursor-pointer border-none p-0 ${
+              className={`scroll-reveal-child group relative overflow-hidden rounded-xl cursor-pointer border-none p-0 transition-all duration-400 hover:-translate-y-1 ${
                 i === 0 ? 'row-span-2 col-span-1 max-md:row-span-1' : ''
               } ${i === 3 ? 'col-span-2 max-md:col-span-1' : ''}`}
+              style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 8px 30px rgba(216,198,165,0.18), 0 2px 8px rgba(0,0,0,0.06)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)';
+              }}
               aria-label={`Ver foto: ${foto.titulo}`}
             >
-              <div className={`w-full bg-primary/10 flex items-center justify-center transition-transform duration-500 group-hover:scale-105 overflow-hidden ${
+              <div className={`w-full bg-primary/10 flex items-center justify-center transition-transform duration-400 group-hover:scale-105 overflow-hidden ${
                 i === 0 ? 'h-[400px] max-md:h-[200px]' : 'h-[190px] max-md:h-[180px] max-sm:h-[220px]'
               }`}>
                 <img src={foto.imagem} alt={foto.titulo} className="w-full h-full object-cover" loading="lazy" />

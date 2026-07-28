@@ -10,6 +10,8 @@ const navLinks = [
   { to: '#eventos', label: 'Eventos' },
   { to: '#galeria', label: 'Galeria' },
   { to: '#quemsomos', label: 'Quem somos' },
+  { to: '#equipopastoral', label: 'Equipe' },
+  { to: '#doacao', label: 'Doação' },
   { to: '#contato', label: 'Contato' },
 ];
 

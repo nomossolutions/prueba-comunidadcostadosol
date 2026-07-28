@@ -90,7 +90,7 @@ export default function Reunioes() {
             );
           })}
         </div>
-        <div className="flex flex-col md:flex-row justify-center items-center gap-6 mt-6">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6 mt-6 scroll-reveal scroll-reveal-stagger">
           {reunioes.slice(3).map((r, i) => {
             const Icon = r.icon;
             return (

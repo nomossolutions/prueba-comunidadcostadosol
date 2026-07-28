@@ -36,6 +36,8 @@ export default function FooterComponent() {
               <li><a href="#eventos" className="text-white/70 text-sm transition-colors duration-300 hover:text-accent">Eventos</a></li>
               <li><a href="#galeria" className="text-white/70 text-sm transition-colors duration-300 hover:text-accent">Galeria</a></li>
               <li><a href="#quemsomos" className="text-white/70 text-sm transition-colors duration-300 hover:text-accent">Quem somos</a></li>
+              <li><a href="#equipopastoral" className="text-white/70 text-sm transition-colors duration-300 hover:text-accent">Equipe</a></li>
+              <li><a href="#doacao" className="text-white/70 text-sm transition-colors duration-300 hover:text-accent">Doação</a></li>
               <li><a href="#contato" className="text-white/70 text-sm transition-colors duration-300 hover:text-accent">Contato</a></li>
             </ul>
           </div>

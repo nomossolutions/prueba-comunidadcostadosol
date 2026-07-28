@@ -13,7 +13,16 @@ export default function Eventos() {
       </section>
 
       <section className="w-full px-[5%] pb-24 max-md:px-4 scroll-reveal">
-        <div className="max-w-[900px] mx-auto rounded-2xl overflow-hidden relative group transition-all duration-400 hover:-translate-y-1" style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.06)' }}>
+        <div
+          className="max-w-[900px] mx-auto rounded-2xl overflow-hidden relative group transition-all duration-400 hover:-translate-y-1"
+          style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.boxShadow = '0 8px 30px rgba(216,198,165,0.18), 0 2px 8px rgba(0,0,0,0.06)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)';
+          }}
+        >
           <div className="absolute inset-0 bg-gradient-to-br from-primary via-primaryLight to-primary" />
           <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '24px 24px' }} />
 

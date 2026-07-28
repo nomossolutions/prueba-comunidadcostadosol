@@ -1,5 +1,60 @@
 import { BiGroup, BiShowAlt, BiBullseye, BiSolidHeart, BiCheck } from 'react-icons/bi';
 
+const cards = [
+  {
+    icon: BiShowAlt,
+    title: 'Visão',
+    desc: 'Ser uma comunidade que reflete o amor de Cristo, impactando vidas e transformando realidades.',
+    accent: '#D8C6A5',
+    bg: 'bg-[#D8C6A5]/[0.04]',
+  },
+  {
+    icon: BiBullseye,
+    title: 'Missão',
+    desc: 'Amar a Deus, cuidar de pessoas e formar discípulos através de relacionamentos e serviço.',
+    accent: '#75836A',
+    bg: 'bg-[#75836A]/[0.04]',
+  },
+  {
+    icon: BiSolidHeart,
+    title: 'Valores',
+    accent: '#D8C6A5',
+    bg: 'bg-[#D8C6A5]/[0.04]',
+    values: ['Amor', 'Fé', 'Comunhão', 'Serviço', 'Integridade'],
+  }
+];
+
+function Card({ m }) {
+  const Icon = m.icon;
+  return (
+    <div
+      className={`scroll-reveal-child bg-white rounded-xl p-10 text-dark flex flex-col items-start text-left relative overflow-hidden transition-all duration-400 group hover:-translate-y-1 max-md:p-6 ${m.bg}`}
+      style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)', borderTop: `3px solid ${m.accent}` }}
+      onMouseEnter={(e) => { e.currentTarget.style.boxShadow = `0 8px 30px ${m.accent}18, 0 2px 8px rgba(0,0,0,0.06)`; }}
+      onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)'; }}
+    >
+      <Icon className="text-[3.5rem] mb-4 block transition-transform duration-300 group-hover:scale-110" style={{ color: `${m.accent}30` }} />
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 -translate-y-1 pointer-events-none">
+        <Icon className="text-[8rem] opacity-[0.04] block" style={{ color: m.accent }} />
+      </div>
+      <h2 className="text-left w-full font-serif text-[1.5rem] font-normal mb-3 text-primary max-md:text-[1.25rem] relative z-10">{m.title}</h2>
+      {m.desc && <p className="text-[1.05rem] text-dark/70 leading-[1.7] max-md:text-base relative z-10">{m.desc}</p>}
+      {m.values && (
+        <ul className="list-none pl-0 mb-6 w-full relative z-10 space-y-3">
+          {m.values.map((v) => (
+            <li key={v} className="text-dark/70 flex items-center text-[1.05rem] max-md:text-base">
+              <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#D8C6A5]/20 mr-3 shrink-0">
+                <BiCheck className="text-[#D8C6A5] text-sm" style={{ fontWeight: 700 }} />
+              </span>
+              {v}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 export default function QuemSomos() {
   return (
     <div className="min-h-screen flex flex-col bg-light relative flex-1">
@@ -11,9 +66,9 @@ export default function QuemSomos() {
 
       <section className="w-full px-[5%] bg-light max-md:px-4 pb-24 scroll-reveal">
         <div className="max-w-[900px] mx-auto animate-fade-in-up">
-          <div className="w-full h-[400px] bg-[url('./assets/img/imgHorizontal.jpg')] bg-cover bg-center rounded-2xl mb-10 max-md:h-[220px] max-sm:h-[180px] shadow-[0_8px_30px_rgba(0,0,0,0.08)]" />
+          <div className="w-full h-[400px] bg-[url('./assets/img/quemsomos.png')] bg-cover bg-center rounded-2xl mb-10 max-md:h-[220px] max-sm:h-[180px] shadow-[0_8px_30px_rgba(0,0,0,0.08)]" />
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-px bg-accent" />
+            <div className="w-12 h-1px bg-accent" />
             <span className="text-accent text-sm uppercase tracking-[0.2em] font-medium">Quem Somos</span>
           </div>
           <p className="font-serif text-[1.5rem] leading-[1.9] text-dark/80 max-w-[750px] max-md:text-[1.15rem]">
@@ -23,57 +78,10 @@ export default function QuemSomos() {
       </section>
 
       <section className="w-full px-[5%] bg-light max-md:px-4 pb-24">
-        <div className="grid grid-cols-3 gap-8 max-w-[1100px] mx-auto max-md:grid-cols-1 max-lg:grid-cols-2 scroll-reveal scroll-reveal-stagger">
-          <div
-            className="scroll-reveal-child bg-white rounded-xl p-10 text-dark flex flex-col items-start text-left relative overflow-hidden transition-all duration-400 group hover:-translate-y-1 max-md:p-6"
-            style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)', borderTop: '3px solid #D8C6A5' }}
-            onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 8px 30px rgba(216,198,165,0.15), 0 2px 8px rgba(0,0,0,0.06)'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)'; }}
-          >
-            <BiShowAlt className="text-[3.5rem] mb-4 block transition-transform duration-300 group-hover:scale-110" style={{ color: '#D8C6A530' }} />
-            <div className="absolute top-10 left-1/2 -translate-x-1/2 -translate-y-1 pointer-events-none">
-              <BiShowAlt className="text-[8rem] opacity-[0.04] block" style={{ color: '#D8C6A5' }} />
-            </div>
-            <h2 className="text-left w-full font-serif text-[1.5rem] font-normal mb-3 text-primary max-md:text-[1.25rem] relative z-10">Visão</h2>
-            <p className="text-[1.05rem] text-dark/70 leading-[1.7] max-md:text-base relative z-10">Ser uma comunidade que reflete o amor de Cristo, impactando vidas e transformando realidades.</p>
-          </div>
-
-          <div
-            className="scroll-reveal-child bg-white rounded-xl p-10 text-dark flex flex-col items-start text-left relative overflow-hidden transition-all duration-400 group hover:-translate-y-1 max-md:p-6"
-            style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)', borderTop: '3px solid #75836A' }}
-            onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 8px 30px rgba(117,131,106,0.15), 0 2px 8px rgba(0,0,0,0.06)'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)'; }}
-          >
-            <BiBullseye className="text-[3.5rem] mb-4 block transition-transform duration-300 group-hover:scale-110" style={{ color: '#75836A30' }} />
-            <div className="absolute top-10 left-1/2 -translate-x-1/2 -translate-y-1 pointer-events-none">
-              <BiBullseye className="text-[8rem] opacity-[0.04] block" style={{ color: '#75836A' }} />
-            </div>
-            <h2 className="text-left w-full font-serif text-[1.5rem] font-normal mb-3 text-primary max-md:text-[1.25rem] relative z-10">Missão</h2>
-            <p className="text-[1.05rem] text-dark/70 leading-[1.7] max-md:text-base relative z-10">Amar a Deus, cuidar de pessoas e formar discípulos através de relacionamentos e serviço.</p>
-          </div>
-
-          <div
-            className="scroll-reveal-child bg-white rounded-xl p-10 text-dark flex flex-col items-start text-left relative overflow-hidden transition-all duration-400 group hover:-translate-y-1 max-md:p-6"
-            style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.04)', borderTop: '3px solid #D8C6A5' }}
-            onMouseEnter={(e) => { e.currentTarget.style.boxShadow = '0 8px 30px rgba(216,198,165,0.15), 0 2px 8px rgba(0,0,0,0.06)'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)'; }}
-          >
-            <BiSolidHeart className="text-[3.5rem] mb-4 block transition-transform duration-300 group-hover:scale-110" style={{ color: '#D8C6A530' }} />
-            <div className="absolute top-10 left-1/2 -translate-x-1/2 -translate-y-1 pointer-events-none">
-              <BiSolidHeart className="text-[8rem] opacity-[0.04] block" style={{ color: '#D8C6A5' }} />
-            </div>
-            <h2 className="text-left w-full font-serif text-[1.5rem] font-normal mb-4 text-primary max-md:text-[1.25rem] relative z-10">Valores</h2>
-            <ul className="list-none pl-0 mb-6 w-full relative z-10 space-y-3">
-              {['Amor', 'Fé', 'Comunhão', 'Serviço', 'Integridade'].map((v) => (
-                <li key={v} className="text-dark/70 flex items-center text-[1.05rem] max-md:text-base">
-                  <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#D8C6A5]/20 mr-3 shrink-0">
-                    <BiCheck className="text-[#D8C6A5] text-sm" style={{ fontWeight: 700 }} />
-                  </span>
-                  {v}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="grid grid-cols-3 gap-8 max-w-[1100px] mx-auto max-md:grid-cols-1 max-lg:grid-cols-2 scroll-reveal scroll-reveal-stagger ">
+          {cards.map((m, i) => (
+            <Card key={i} m={m} />
+          ))}
         </div>
       </section>
     </div>
