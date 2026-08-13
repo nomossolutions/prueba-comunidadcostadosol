@@ -6,9 +6,14 @@
   --color-primary: #203246;
   --color-primaryLight: #2a4a6e;
   --color-accent: #D8C6A5;
+  --color-accent-dark: #8A6D3F;
+  --color-accent-hover: #c9b692;
   --color-dark: #2E3A59;
   --color-light: #FAFAF8;
   --color-olive: #75836A;
+  --color-olive-dark: #5C6750;
+  --color-success: #5C6750;
+  --color-error: #9B4D3A;
   --animate-fade-in-down: fadeInDown 0.6s ease-out both;
   --animate-fade-in-up: fadeInUp 0.6s ease-out both;
   --animate-delay-100: 100ms;

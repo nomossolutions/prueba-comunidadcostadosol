@@ -1,4 +1,3 @@
-import React from "react";
 import Reunioes from "../components/reunioes";
 import Ministerios from "../components/ministerios";
 import Eventos from "../components/eventos";
@@ -7,29 +6,31 @@ import QuemSomos from "../components/quemsomos";
 import EquipePastoral from "../components/equipopastoral";
 import Contato from "../components/contato";
 import Doacao from "../components/doacao";
-import HeroImg from "../assets/img/heroimg3.png";
+import HeroImg from "../assets/img/heroimg3.jpg";
 
 export default function InicioPage() {
   return (
     <div className="min-h-screen flex flex-col bg-light relative box-border flex-auto grain">
       <section className="relative min-h-screen flex items-center w-full overflow-hidden pt-22 max-md:pt-15 max-sm:pt-13">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${HeroImg})` }}
+        <img
+          src={HeroImg}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-linear-to-r from-primary/85 via-primary/70 to-primary/40" />
         <div className="hero-light-leak" />
         <div className="relative max-w-330 mx-auto px-4 xl:max-w-300 2xl:max-w-350 z-10">
           <div className="flex flex-col items-center text-center">
             <h1
-              className="mb-4 font-normal text-white text-4xl max-md:text-[clamp(1.8rem,5vw,2.5rem)] xl:text-[3.2rem] 2xl:text-[3.8rem] leading-tight animate-fade-in-down"
+              className="mb-4 font-normal text-white text-4xl max-md:text-[clamp(1.8rem,5vw,2.5rem)] xl:text-[3.6rem] 2xl:text-[4.4rem] leading-[1.1] animate-fade-in-down"
               style={{ animationDelay: "var(--animate-delay-100)" }}
             >
               Um lugar para <span className="text-accent">pertencer</span>
             </h1>
 
             <p
-              className="text-white/85 text-[1.15rem] mb-6 max-md:text-base xl:text-[1.3rem] 2xl:text-[1.5rem] leading-relaxed max-w-2xl animate-fade-in-up"
+              className="text-white/85 text-[1.15rem] mb-6 max-md:text-base xl:text-[1.3rem] 2xl:text-[1.5rem] leading-relaxed max-w-xl animate-fade-in-up"
               style={{ animationDelay: "var(--animate-delay-200)" }}
             >
               Somos uma comunidade que caminha junta, cuidando de pessoas e
@@ -42,7 +43,7 @@ export default function InicioPage() {
             >
               <a
                 href="#reunioes"
-                className="inline-flex items-center justify-center rounded-full bg-accent px-8 py-3 text-base font-medium text-primary transition-all duration-300 hover:bg-[#c9b692] hover:-translate-y-px hover:shadow-[0_4px_8px_-2px_rgba(216,198,165,0.4)]"
+                className="inline-flex items-center justify-center rounded-full bg-accent px-8 py-3 text-base font-medium text-primary transition-all duration-300 hover:bg-accent-hover hover:-translate-y-px hover:shadow-[0_4px_8px_-2px_rgba(216,198,165,0.4)]"
               >
                 Horários dos cultos
               </a>
@@ -56,7 +57,7 @@ export default function InicioPage() {
             </div>
 
             <p
-              className="mt-8 text-white/50 text-sm italic max-w-lg animate-fade-in-up"
+              className="mt-8 text-white/60 text-[0.95rem] italic max-w-xl animate-fade-in-up"
               style={{ animationDelay: "var(--animate-delay-400)" }}
             >
               «Onde dois ou três se reúnem em meu nome, ali estou eu no meio
@@ -74,7 +75,7 @@ export default function InicioPage() {
       </section>
       <section
         id="ministerios"
-        className="bg-white border-t border-[rgba(216,198,165,0.35)] scroll-reveal"
+        className="bg-white border-t border-olive/20 scroll-reveal"
       >
         <Ministerios />
       </section>
@@ -86,13 +87,13 @@ export default function InicioPage() {
       </section>
       <section
         id="galeria"
-        className="bg-white border-t border-[rgba(216,198,165,0.35)] scroll-reveal"
+        className="bg-white border-t border-olive/20 scroll-reveal"
       >
         <Galeria />
       </section>
       <section
         id="quemsomos"
-        className="bg-white border-t border-[rgba(216,198,165,0.35)] scroll-reveal"
+        className="bg-white border-t border-olive/20 scroll-reveal"
       >
         <QuemSomos />
       </section>
@@ -104,7 +105,7 @@ export default function InicioPage() {
       </section>
       <section
         id="doacao"
-        className="bg-white border-t border-[rgba(216,198,165,0.35)] scroll-reveal"
+        className="bg-white border-t border-olive/20 scroll-reveal"
       >
         <Doacao />
       </section>

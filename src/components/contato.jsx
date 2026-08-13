@@ -1,14 +1,14 @@
-import { BiChat, BiInfoCircle, BiMapPin, BiDirections, BiBuilding, BiMap, BiPhone, BiEnvelope } from 'react-icons/bi';
+import { BiChat, BiInfoCircle, BiMapPin, BiDirections, BiBuilding, BiPhone, BiEnvelope } from 'react-icons/bi';
 
 export default function Contato() {
   return (
     <div className="min-h-screen flex flex-col bg-light relative flex-1">
       <section className="text-center py-24 px-8 bg-light max-md:py-16 max-md:px-6 max-sm:py-12 max-sm:px-4 scroll-reveal">
-        <h1 className="text-[2.5rem] text-primary animate-fade-in-down mb-3 max-md:text-[1.8rem] max-sm:text-[1.5rem] max-xl:text-[3rem] 2xl:text-[3.5rem]">
+        <h1 className="text-[2.5rem] text-primary font-medium animate-fade-in-down mb-4 max-md:text-[1.8rem] max-sm:text-[1.5rem] max-xl:text-[3rem] xl:text-[3.5rem] 2xl:text-[4.2rem] leading-[1.1]">
           <BiChat className="inline-block text-accent mr-2" /> Contato
         </h1>
-        <p className="text-[1.15rem] text-dark max-w-[600px] mx-auto leading-relaxed max-md:text-base">
-          Gostaría de nos conhecer melhor? Estamos aqui para você.
+        <p className="text-[1.15rem] text-dark/80 max-w-[600px] mx-auto leading-relaxed max-md:text-base">
+          Gostaria de nos conhecer melhor? Estamos aqui para você.
         </p>
       </section>
 
@@ -33,11 +33,11 @@ export default function Contato() {
               </li>
               <li className="mb-3 flex items-start list-none">
                 <BiPhone className="text-accent mr-3 shrink-0 mt-1" />
-                <span><strong className="text-primary">Tel.:</strong> (22) 12345 6789</span>
+                <span><strong className="text-primary">Tel.:</strong> <span className="text-dark/50 italic" title="Em breve">(22) 12345 6789</span></span>
               </li>
               <li className="mb-3 flex items-start list-none">
                 <BiEnvelope className="text-accent mr-3 shrink-0 mt-1" />
-                <span><strong className="text-primary">E-mail:</strong> contato@comunidadecostadosol.com</span>
+                <span><strong className="text-primary">E-mail:</strong> <span className="text-dark/50 italic" title="Em breve">contato@comunidadecostadosol.com</span></span>
               </li>
             </ul>
             <div className="mt-6">
@@ -45,37 +45,41 @@ export default function Contato() {
             </div>
           </div>
 
-          <form onSubmit={(e) => { e.preventDefault(); alert('Mensagem enviada com sucesso!'); e.target.reset(); }} className="flex-1 bg-white p-8 rounded-xl shadow-sm max-md:p-6 max-sm:p-4">
+          <form onSubmit={(e) => { e.preventDefault(); const fd = new FormData(e.target); const name = fd.get('name') || ''; const email = fd.get('email') || ''; const msg = fd.get('message') || ''; const body = `Olá! Meu nome é ${name}.\n\n${msg}\n\n(${email})`; window.open(`mailto:contato@comunidadecostadosol.com?subject=Mensagem de ${name}&body=${encodeURIComponent(body)}`); }} className="flex-1 bg-white p-8 rounded-xl shadow-sm max-md:p-6 max-sm:p-4">
             <div className="mb-4">
               <label htmlFor="formGroupName" className="block mb-1.5 font-medium text-dark text-sm">Nome e Sobrenome</label>
               <input
                 id="formGroupName"
+                name="name"
                 type="text"
                 required
                 placeholder="João Silva"
-                className="w-full px-4 py-2.5 border border-[rgba(0,0,0,0.1)] rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition bg-[#FAFAF8]"
+                className="w-full px-4 py-2.5 border border-[rgba(0,0,0,0.1)] rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition bg-light"
               />
             </div>
             <div className="mb-4">
               <label htmlFor="formGroupEmail" className="block mb-1.5 font-medium text-dark text-sm">E-mail</label>
               <input
                 id="formGroupEmail"
+                name="email"
                 type="email"
                 required
                 placeholder="joao@exemplo.com"
-                className="w-full px-4 py-2.5 border border-[rgba(0,0,0,0.1)] rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition bg-[#FAFAF8]"
+                className="w-full px-4 py-2.5 border border-[rgba(0,0,0,0.1)] rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition bg-light"
               />
             </div>
             <div className="mb-4">
               <label htmlFor="formMensagem" className="block mb-1.5 font-medium text-dark text-sm">Mensagem</label>
               <textarea
                 id="formMensagem"
+                name="message"
                 rows={5}
                 required
                 placeholder="Escreva sua mensagem aqui..."
-                className="w-full px-4 py-2.5 border border-[rgba(0,0,0,0.1)] rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition resize-vertical bg-[#FAFAF8]"
+                className="w-full px-4 py-2.5 border border-[rgba(0,0,0,0.1)] rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition resize-vertical bg-light"
               />
             </div>
+            <p className="text-dark/60 text-xs mb-4">Ao enviar, seu aplicativo de e-mail será aberto com a mensagem pronta.</p>
             <button type="submit" className="rounded-full px-8 py-3 font-medium text-base bg-primary text-white shadow-[0_2px_4px_-1px_rgba(32,50,70,0.15)] transition-all duration-300 inline-block text-center w-full cursor-pointer hover:bg-primaryLight hover:shadow-[0_4px_8px_-2px_rgba(42,74,110,0.2)] hover:-translate-y-px">
               Enviar Mensagem
             </button>
