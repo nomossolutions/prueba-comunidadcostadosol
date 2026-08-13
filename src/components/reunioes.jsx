@@ -1,50 +1,58 @@
-import { BiCalendarEvent, BiHistory, BiMapPin, BiBookOpen, BiSolidBolt, BiFemaleSign, BiGroup } from 'react-icons/bi';
+import {
+  BiCalendarEvent,
+  BiHistory,
+  BiMapPin,
+  BiBookOpen,
+  BiSolidBolt,
+  BiFemaleSign,
+  BiGroup,
+} from "react-icons/bi";
 
 const reunioes = [
   {
     icon: BiHistory,
-    titulo: 'Culto de Celebração',
-    dia: 'Domingos',
-    hora: '19:00 hs',
-    desc: 'Venha adorar conosco, ouvir a Palavra e experimentar a comunhão.',
-    accent: 'var(--color-accent)',
-    text: 'var(--color-accent-dark)',
+    titulo: "Culto de Celebração",
+    dia: "Domingos",
+    hora: "19:00 hs",
+    desc: "Venha adorar conosco, ouvir a Palavra e experimentar a comunhão.",
+    accent: "var(--color-accent)",
+    text: "var(--color-accent-dark)",
   },
   {
     icon: BiBookOpen,
-    titulo: 'Escola Bíblica Dominical',
-    dia: 'Domingos',
-    hora: '10:00 hs',
-    desc: 'Estudo aprofundado das Escrituras para todas as idades.',
-    accent: 'var(--color-olive)',
-    text: 'var(--color-olive-dark)',
+    titulo: "Escola Bíblica Dominical",
+    dia: "Domingos",
+    hora: "10:00 hs",
+    desc: "Estudo aprofundado das Escrituras para todas as idades.",
+    accent: "var(--color-olive)",
+    text: "var(--color-olive-dark)",
   },
   {
     icon: BiSolidBolt,
-    titulo: 'Culto de Oração',
-    dia: 'Quartas',
-    hora: '20:00 hs',
-    desc: 'Momento de intercessão, louvor íntimo e busca pela presença de Deus.',
-    accent: 'var(--color-accent)',
-    text: 'var(--color-accent-dark)',
+    titulo: "Culto de Oração",
+    dia: "Quartas",
+    hora: "20:00 hs",
+    desc: "Momento de intercessão, louvor íntimo e busca pela presença de Deus.",
+    accent: "var(--color-accent)",
+    text: "var(--color-accent-dark)",
   },
   {
     icon: BiGroup,
-    titulo: 'Encontro de Jovens',
-    dia: 'Sextas',
-    hora: '20:00 hs',
-    desc: 'Louvor, estudos bíblicos e comunhão para a juventude.',
-    accent: 'var(--color-olive)',
-    text: 'var(--color-olive-dark)',
+    titulo: "Encontro de Jovens",
+    dia: "Sextas",
+    hora: "20:00 hs",
+    desc: "Louvor, estudos bíblicos e comunhão para a juventude.",
+    accent: "var(--color-olive)",
+    text: "var(--color-olive-dark)",
   },
   {
     icon: BiFemaleSign,
-    titulo: 'Encontro de Mulheres',
-    dia: 'Sábados',
-    hora: '10:00 hs',
-    desc: 'Edificação e comunhão entre mulheres cristãs.',
-    accent: 'var(--color-accent)',
-    text: 'var(--color-accent-dark)',
+    titulo: "Encontro de Mulheres",
+    dia: "Sábados",
+    hora: "10:00 hs",
+    desc: "Edificação e comunhão entre mulheres cristãs.",
+    accent: "var(--color-accent)",
+    text: "var(--color-accent-dark)",
   },
 ];
 
@@ -53,7 +61,8 @@ export default function Reunioes() {
     <div className="min-h-screen flex flex-col bg-light relative flex-1">
       <section className="text-center py-24 px-8 bg-light max-md:py-16 max-md:px-6 max-sm:py-12 max-sm:px-4 scroll-reveal">
         <h1 className="text-[2.5rem] text-primary font-medium animate-fade-in-down mb-4 max-md:text-[1.8rem] max-sm:text-[1.5rem] max-xl:text-[3rem] xl:text-[3.5rem] 2xl:text-[4.2rem] leading-[1.1]">
-          <BiCalendarEvent className="inline-block text-accent mr-2" /> Nossas Reuniões
+          <BiCalendarEvent className="inline-block text-accent mr-2" /> Nossas
+          Reuniões
         </h1>
       </section>
 
@@ -64,16 +73,17 @@ export default function Reunioes() {
             return (
               <div
                 key={i}
-                className="scroll-reveal-child bg-white rounded-xl p-10 text-dark flex flex-col items-center text-center w-full relative overflow-hidden transition-all duration-400 group hover:-translate-y-1"
+                className=" bg-white rounded-xl p-10 text-dark flex flex-col items-center text-center w-full relative overflow-hidden transition-all duration-400 group hover:-translate-y-1"
                 style={{
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
                   borderLeft: `4px solid ${r.accent}`,
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.boxShadow = `0 12px 40px ${r.accent}22, 0 4px 12px rgba(0,0,0,0.08)`;
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)';
+                  e.currentTarget.style.boxShadow =
+                    "0 2px 8px rgba(0,0,0,0.06)";
                 }}
               >
                 <span
@@ -82,12 +92,24 @@ export default function Reunioes() {
                 >
                   {r.dia}
                 </span>
-                <Icon className="text-3xl mb-3 block transition-transform duration-300 group-hover:scale-110" style={{ color: r.accent }} />
-                <h2 className="font-serif text-[1.3rem] font-medium mb-3 text-primary max-md:text-[1.15rem]">{r.titulo}</h2>
+                <Icon
+                  className="text-3xl mb-3 block transition-transform duration-300 group-hover:scale-110"
+                  style={{ color: r.accent }}
+                />
+                <h2 className="font-serif text-[1.3rem] font-medium mb-3 text-primary max-md:text-[1.15rem]">
+                  {r.titulo}
+                </h2>
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-lg font-semibold" style={{ color: r.text }}>{r.hora}</span>
+                  <span
+                    className="text-lg font-semibold"
+                    style={{ color: r.text }}
+                  >
+                    {r.hora}
+                  </span>
                 </div>
-                <p className="text-[1rem] text-dark/80 leading-[1.7] max-md:text-sm">{r.desc}</p>
+                <p className="text-[1rem] text-dark/80 leading-[1.7] max-md:text-sm">
+                  {r.desc}
+                </p>
               </div>
             );
           })}
@@ -98,16 +120,17 @@ export default function Reunioes() {
             return (
               <div
                 key={i}
-                className="scroll-reveal-child bg-white rounded-xl p-10 text-dark flex flex-col items-center text-center w-full max-w-[350px] relative overflow-hidden transition-all duration-400 group hover:-translate-y-1"
+                className=" bg-white rounded-xl p-10 text-dark flex flex-col items-center text-center w-full max-w-[350px] relative overflow-hidden transition-all duration-400 group hover:-translate-y-1"
                 style={{
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
                   borderLeft: `4px solid ${r.accent}`,
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.boxShadow = `0 12px 40px ${r.accent}22, 0 4px 12px rgba(0,0,0,0.08)`;
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)';
+                  e.currentTarget.style.boxShadow =
+                    "0 2px 8px rgba(0,0,0,0.06)";
                 }}
               >
                 <span
@@ -116,12 +139,24 @@ export default function Reunioes() {
                 >
                   {r.dia}
                 </span>
-                <Icon className="text-3xl mb-3 block transition-transform duration-300 group-hover:scale-110" style={{ color: r.accent }} />
-                <h2 className="font-serif text-[1.3rem] font-medium mb-3 text-primary max-md:text-[1.15rem]">{r.titulo}</h2>
+                <Icon
+                  className="text-3xl mb-3 block transition-transform duration-300 group-hover:scale-110"
+                  style={{ color: r.accent }}
+                />
+                <h2 className="font-serif text-[1.3rem] font-medium mb-3 text-primary max-md:text-[1.15rem]">
+                  {r.titulo}
+                </h2>
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-lg font-semibold" style={{ color: r.text }}>{r.hora}</span>
+                  <span
+                    className="text-lg font-semibold"
+                    style={{ color: r.text }}
+                  >
+                    {r.hora}
+                  </span>
                 </div>
-                <p className="text-[1rem] text-dark/80 leading-[1.7] max-md:text-sm">{r.desc}</p>
+                <p className="text-[1rem] text-dark/80 leading-[1.7] max-md:text-sm">
+                  {r.desc}
+                </p>
               </div>
             );
           })}
@@ -139,5 +174,5 @@ export default function Reunioes() {
         </div>
       </section>
     </div>
-  )
+  );
 }
